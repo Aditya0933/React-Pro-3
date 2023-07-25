@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import Spiner from './Components/Spiner'; 
 
 function App() {
-  const [courses, setCourses] = useState(null)
+  const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(true)
   async function fetchData(){
     setLoading(true);
@@ -34,7 +34,7 @@ function App() {
       <div>
         <Navbar/>       
       </div>
-      
+
       <div>
         <Filter filterdata={filterdata}/>
       </div>
