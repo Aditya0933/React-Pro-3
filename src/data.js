@@ -17,7 +17,7 @@ export const filterdata = [
     },
     {
         id:"5",
-        tittle:"Life Style"
+        tittle:"Lifestyle"
     }
 ]
  export const apiUrl = "https://codehelp-apis.vercel.app/api/get-top-courses"

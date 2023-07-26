@@ -31,12 +31,12 @@ function App() {
     fetchData();
    }, [])
   return (
-    <div className="App min-h-screen flex flex-col">
+    <div className="App min-h-screen flex flex-col bg-black">
       <div>
         <Navbar/>       
       </div>
 
-      <div className='bg-black'>
+      <div>
         <div>
           <Filter filterdata={filterdata} category={category} setCategory={setCategory}/>
         </div>

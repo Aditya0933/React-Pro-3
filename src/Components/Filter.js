@@ -11,7 +11,7 @@ const Filter =(props)=>{
         <div className="w-11/12 flex flex-wrap max-w-max space-x-4 gap-y-4 mx-auto py-4 justify-center">
             {filterdata.map((data)=>{
             return(
-                <button className="bg-black text-white font-medium rounded-md py-1 px-2 text-lg hover:bg-opacity-50 border-2 transition-all duration-300" key={data.id} onClick={() => filterHandler(data.tittle)}>{data.tittle}</button>
+                <button className={`bg-black text-white font-medium rounded-md py-1 px-2 text-lg hover:bg-opacity-50 border-2 transition-all duration-300 ${category === data.tittle ? "bg-opacity-60 border-white":"bg-opacity-40 border-transparent"}`} key={data.id} onClick={() => filterHandler(data.tittle)}>{data.tittle}</button>
             )
         })}
         </div>
