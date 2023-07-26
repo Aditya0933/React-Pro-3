@@ -11,9 +11,10 @@ import Spiner from './Components/Spiner';
 function App() {
   const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(true)
+  const [category ,setCategory] = useState(filterdata[0].tittle)
   async function fetchData(){
     setLoading(true);
-    try{   
+    try{
       console.log("hiiii")
       let response = await fetch(apiUrl);
       let output = await response.json();
@@ -30,19 +31,21 @@ function App() {
     fetchData();
    }, [])
   return (
-    <div className="App">
+    <div className="App min-h-screen flex flex-col">
       <div>
         <Navbar/>       
       </div>
 
-      <div>
-        <Filter filterdata={filterdata}/>
-      </div>
+      <div className='bg-black'>
+        <div>
+          <Filter filterdata={filterdata} category={category} setCategory={setCategory}/>
+        </div>
 
-      <div>
-        {
-          loading ? (<Spiner/>) : (<Cards courses={courses}/>)
-        }
+        <div className='w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center min-h-[50vh] '>
+          {
+            loading ? (<Spiner/>) : (<Cards courses={courses} category={category}/>)
+          }
+        </div>
       </div>
     </div>
   );
